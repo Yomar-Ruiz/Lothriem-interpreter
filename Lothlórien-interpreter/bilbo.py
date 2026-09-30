@@ -23,7 +23,9 @@ def bilbo(codigo):
         "-": "MINUS",
         "+": "PLUS",
         "*": "MULTIPLY",
-        "/": "DIVIDE"
+        "/": "DIVIDE",
+        "(": "LEFT_PAREN",
+        ")": "RIGHT_PAREN"
     }
 
     for caracter in codigo:
