@@ -3,7 +3,24 @@ from elrond import elrond
 from gandalf import gandalf
 
 
-codigo = "dwarf frodo = 10 * (5 + 2) - 3"
+codigo = """
+dwarf gimli = 10
+
+gimli = 25
+
+dwarf resultado = gimli + 5
+
+MorgothDice resultado > 20 {
+    hobbit mensaje = "El resultado es mayor que 20"
+}
+SauronDice {
+    hobbit mensaje = "El resultado no es mayor que 20"
+}
+"""
+
+
+entorno = {}
+
 
 tokens = bilbo(codigo)
 
@@ -18,7 +35,15 @@ ast = elrond(tokens)
 print("\nAST:")
 print(ast)
 
-resultado = gandalf(ast["valor"])
+
+resultado = gandalf(
+    ast,
+    entorno
+)
 
 print("\nRESULTADO:")
 print(resultado)
+
+
+print("\nENTORNO FINAL:")
+print(entorno)
